@@ -56,8 +56,9 @@ if st.button("Generar Ficha de Triaje con IA 🚀", type="primary"):
             try:
                 # Configurar la API de Google Gemini
                 genai.configure(api_key=api_key)
-                # Usar el modelo Flash (rápido y gratuito)
-                model = genai.GenerativeModel('gemini-1.5-flash')
+                
+                # Usar el modelo Pro (versión clásica muy estable para evitar el error 404)
+                model = genai.GenerativeModel('gemini-pro')
                 
                 prompt_sistema = f"""
                 Actúa como un asistente médico de triaje profesional para un consultorio de la especialidad de {especialidad}.
